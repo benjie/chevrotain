@@ -77,7 +77,7 @@ function matchIndentBase(text, offset, matchedTokens, groups, type) {
     if (isFirstLine || isStartOfLine) {
         let match
         let currIndentLevel = undefined
-        const isZeroIndent = text.length < offset && text[offset] !== " "
+        const isZeroIndent = text.length > offset && text[offset] !== " "
         if (isZeroIndent) {
             // Matching zero spaces Outdent would not consume any chars, thus it would cause an infinite loop.
             // This check prevents matching a sequence of zero spaces outdents.
